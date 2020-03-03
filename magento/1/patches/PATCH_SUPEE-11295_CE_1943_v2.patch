@@ -1,14 +1,11 @@
-SUPEE-11295_CE_1943 | CE_1.9.4.3 | v1 | 1843190f16a4bde9437f79079a00393b255935b1 | Fri Jan 17 20:03:45 2020 +0000 | 53d9eb48db015fa48824e8bf5f26de42081754f0..HEAD
-
-__PATCHFILE_FOLLOWS__
 diff --git app/code/core/Mage/Adminhtml/Block/Catalog/Product/Helper/Form/Gallery/Content.php app/code/core/Mage/Adminhtml/Block/Catalog/Product/Helper/Form/Gallery/Content.php
 index ff633cee5eb..5dab2f1e7d5 100644
 --- app/code/core/Mage/Adminhtml/Block/Catalog/Product/Helper/Form/Gallery/Content.php
 +++ app/code/core/Mage/Adminhtml/Block/Catalog/Product/Helper/Form/Gallery/Content.php
 @@ -55,7 +55,10 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
  
-         $this->getUploader()->getUploaderConfig()
-             ->setFileParameterName('image')
+             $this->getUploader()->getUploaderConfig()
+                 ->setFileParameterName('image')
 -            ->setTarget(Mage::getModel('adminhtml/url')->addSessionParam()->getUrl('*/catalog_product_gallery/upload'));
 +            ->setTarget(Mage::getModel('adminhtml/url')->addSessionParam()->getUrl(
 +                '*/catalog_product_gallery/upload',
